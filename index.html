@@ -1,6 +1,22 @@
 <!DOCTYPE html>
 <html lang="es"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Viaje a Coveñas </title>
+
+<!-- PWA Meta Tags -->
+<meta name="description" content="Página web del viaje a Coveñas">
+<meta name="theme-color" content="#000000">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Viaje a Coveñas">
+<meta name="application-name" content="Viaje a Coveñas">
+
+<!-- Manifest -->
+<link rel="manifest" href="manifest.json">
+
+<!-- Icons -->
+<link rel="icon" type="image/svg+xml" href="icon-192x192.svg">
+<link rel="apple-touch-icon" href="icon-192x192.svg">
 <style>
   *{box-sizing:border-box}
   body{margin:0;font-family:'Poppins',sans-serif;color:#fff;background:#000;overflow:hidden}
@@ -143,5 +159,18 @@ if ("2026-06-07" === todayStr) {
   function burst(){const X=Math.random()*c.width,Y=Math.random()*c.height*.5,C=`hsl(${Math.random()*360},100%,60%)`;for(let i=0;i<120;i++)P.push(new Pt(X,Y,C))}
   function loop(){x.clearRect(0,0,c.width,c.height);for(let i=P.length-1;i>=0;i--){const p=P[i];p.u();p.d();if(p.a<=0)P.splice(i,1)}requestAnimationFrame(loop)}
   setInterval(burst,350); burst(); loop();
+  
+  // Registro del Service Worker para PWA
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', function() {
+      navigator.serviceWorker.register('sw.js')
+        .then(function(registration) {
+          console.log('ServiceWorker registrado con éxito:', registration.scope);
+        })
+        .catch(function(error) {
+          console.log('Error al registrar ServiceWorker:', error);
+        });
+    });
+  }
 </script>
 </html>

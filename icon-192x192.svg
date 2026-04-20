@@ -1,0 +1,10 @@
+<svg width="192" height="192" viewBox="0 0 192 192" xmlns="http://www.w3.org/2000/svg">
+  <rect width="192" height="192" fill="#000000"/>
+  <circle cx="96" cy="60" r="25" fill="#FFD700"/>
+  <path d="M30 120 Q96 80 162 120 Q96 160 30 120" fill="#0066CC"/>
+  <path d="M40 140 Q96 110 152 140 L152 160 Q96 130 40 160 Z" fill="#87CEEB"/>
+  <circle cx="60" cy="100" r="3" fill="#FF6B6B"/>
+  <circle cx="100" cy="90" r="4" fill="#FF6B6B"/>
+  <circle cx="130" cy="110" r="2" fill="#FF6B6B"/>
+  <text x="96" y="180" text-anchor="middle" fill="#FFD700" font-family="Arial, sans-serif" font-size="14" font-weight="bold">COVEÑAS</text>
+</svg>
